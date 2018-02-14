@@ -89,6 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Y:\Programmierung\_Projects\Cpp\Logfile\Logfile;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,6 +116,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Y:\Programmierung\_Projects\Cpp\Logfile\Logfile;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +141,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Attachments\stHeader.h" />
+    <ClInclude Include="Core\Attachments\stSingleton.h" />
+    <ClInclude Include="Core\Attachments\stSupporter.h" />
+    <ClInclude Include="Core\lHeader.h" />
     <ClInclude Include="Core\Logfile.h" />
+    <ClInclude Include="Core\lReport.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\Attachments\stSingleton.cpp" />
+    <ClCompile Include="Core\Attachments\stSupporter.cpp" />
+    <ClCompile Include="Core\lConfiguration.cpp" />
+    <ClCompile Include="Core\lConfiguration.h" />
+    <ClCompile Include="Core\lHeader.cpp" />
+    <ClCompile Include="Core\lLogfile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Attachments\stSingleton.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

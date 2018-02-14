@@ -1,25 +1,31 @@
 //_____________________________________________________________________________________________
 //*********************************************************************************************
 //
-//	core
+//	this file is part of the simpletry engine
+//
+//	Author: Alexander Bassov
+//	Email: blackxes@gmx.de
+//	Github: https://www.github.com/Blackxes
+//
+//	@File
+//	this file contains the configuration for the logfile
 //
 //*********************************************************************************************
-
-// main object
-var log = log || {};
+//
+#pragma once
+#ifndef L_CONFIGURATION
+#define L_CONFIGURATION
 
 //_____________________________________________________________________________________________
-// configuration
-cv.config = {
-	"reportTypes": { 0: "error", 10: "info", 30: "warning", 100: "other" }
+// report types
+enum LogfileReportTypes {
+	//
+	RT_NONE = -1,
+	RT_ERROR = 0,
+	RT_INFO = 10,
+	RT_WARNING = 20,
+	RT_OTHER = 100
 };
 
 //_____________________________________________________________________________________________
-// filters the reports by their type
-cv.
-
-//_____________________________________________________________________________________________
-//
-/*
-	
-*/
+#endif

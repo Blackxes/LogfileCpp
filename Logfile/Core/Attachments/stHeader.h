@@ -1,25 +1,33 @@
 //_____________________________________________________________________________________________
 //*********************************************************************************************
 //
-//	core
+//	this file is part of the simpletry engine
+//
+//	Author: Alexander Bassov
+//	Email: blackxes@gmx.de
+//	Github: https://www.github.com/Blackxes
+//
+//	@File
+//	this file contains the inclusion of header and ressources
 //
 //*********************************************************************************************
-
-// main object
-var log = log || {};
-
-//_____________________________________________________________________________________________
-// configuration
-cv.config = {
-	"reportTypes": { 0: "error", 10: "info", 30: "warning", 100: "other" }
-};
-
-//_____________________________________________________________________________________________
-// filters the reports by their type
-cv.
-
-//_____________________________________________________________________________________________
 //
-/*
-	
-*/
+#pragma once
+#ifndef ST_HEADER
+#define ST_HEADER
+
+//_____________________________________________________________________________________________
+// library header
+#include <iostream>
+#include <string>
+#include <list>
+#include <map>
+#include <fstream>
+
+//_____________________________________________________________________________________________
+// header
+#include <Core\Attachments\stSingleton.h>
+#include <Core\Attachments\stSupporter.h>
+
+//_____________________________________________________________________________________________
+#endif

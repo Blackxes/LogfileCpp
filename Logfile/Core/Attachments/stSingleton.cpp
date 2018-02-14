@@ -1,25 +1,27 @@
 //_____________________________________________________________________________________________
 //*********************************************************************************************
 //
-//	core
+//	this file is part of the simpletry engine
+//
+//	Author: Alexander Bassov
+//	Email: blackxes@gmx.de
+//	Github: https://www.github.com/Blackxes
+//
+//	@File
+//	contains a singleton class to provide instance to exists only once
 //
 //*********************************************************************************************
-
-// main object
-var log = log || {};
-
-//_____________________________________________________________________________________________
-// configuration
-cv.config = {
-	"reportTypes": { 0: "error", 10: "info", 30: "warning", 100: "other" }
-};
+//
+#pragma once
 
 //_____________________________________________________________________________________________
-// filters the reports by their type
-cv.
+// header
+#include <Core\Attachments\stHeader.h>
+
+//_____________________________________________________________________________________________
+// declarations
+template <class T>
+T* stSingleton<T>::Instance = nullptr; 
 
 //_____________________________________________________________________________________________
 //
-/*
-	
-*/
