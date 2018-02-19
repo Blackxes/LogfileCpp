@@ -88,7 +88,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PR_DEBUG=1;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Y:\Programmierung\_Projects\Cpp\Logfile\Logfile;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -115,7 +115,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PR_RELEASE=1;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Y:\Programmierung\_Projects\Cpp\Logfile\Logfile;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -141,23 +141,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Core\Attachments\stHeader.h" />
-    <ClInclude Include="Core\Attachments\stSingleton.h" />
-    <ClInclude Include="Core\Attachments\stSupporter.h" />
-    <ClInclude Include="Core\lHeader.h" />
-    <ClInclude Include="Core\Logfile.h" />
-    <ClInclude Include="Core\lReport.h" />
+    <ClInclude Include="Core\stSupporter.h" />
+    <ClInclude Include="Core\stHeader.h" />
+    <ClInclude Include="Core\stLogfile.h" />
+    <ClInclude Include="Core\stTemplateParser.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Core\Attachments\stSingleton.cpp" />
-    <ClCompile Include="Core\Attachments\stSupporter.cpp" />
-    <ClCompile Include="Core\lConfiguration.cpp" />
-    <ClCompile Include="Core\lConfiguration.h" />
-    <ClCompile Include="Core\lHeader.cpp" />
-    <ClCompile Include="Core\lLogfile.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Core\Attachments\stSingleton.inl" />
+    <ClCompile Include="Core\stSupporter.cpp" />
+    <ClCompile Include="Core\stLogfile.cpp" />
+    <ClCompile Include="Core\stTemplateParser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

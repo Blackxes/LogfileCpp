@@ -12,12 +12,10 @@
 //	eg. std::string::replace is usable like this s.replace(needle, replacer)
 //
 //*********************************************************************************************
-//
-#pragma once
 
 //_____________________________________________________________________________________________
 // header
-#include <Core\Attachments\stHeader.h>
+#include <Core\stHeader.h>
 
 //_____________________________________________________________________________________________
 // replaces strings with a substr

@@ -18,19 +18,24 @@
 
 //_____________________________________________________________________________________________
 // define dll export/import
-#ifndef LOGFILE_API
-	#define LOGFILE_API __declspec(dllexport)
+#if (PR_DEBUG == 1)
+	#define SIMPLETRY_API __declspec(dllexport)
+#elif (PR_RELEASE == 1)
+	#define SIMPLETRY_API __declspec(dllimport)
 #else
-	#define LOGFILE_API __declspec(dllimport)
+	#define SIMPLETRY_API
 #endif
 
 //_____________________________________________________________________________________________
 // library header
+//#include <Windows.h>
+//#include <tchar.h>
 #include <iostream>
 #include <string>
 #include <list>
 #include <map>
 #include <fstream>
+#include <ctime>
 
 //_____________________________________________________________________________________________
 // datatypes
@@ -38,7 +43,7 @@ using UINT = unsigned int;
 
 //_____________________________________________________________________________________________
 // states
-enum stState {
+enum SIMPLETRY_API stState {
 	//
 	ST_NONE,
 	ST_OK,
@@ -49,13 +54,35 @@ enum stState {
 	ST_COUNTER,
 };
 
+// logfile report types
+enum SIMPLETRY_API LogfileReportTypes {
+	//
+	RT_NONE = -1,
+	RT_ERROR = 0,
+	RT_INFO = 10,
+	RT_WARNING = 20,
+	RT_OTHER = 100
+};
+
+//_____________________________________________________________________________________________
+// definitions
+const std::string g_tPage = "./Core/Ressources/template_page";
+const std::string g_tReport = "./Core/Ressources/template_report";
+//
+const std::string g_lFilename = "logfile.html";
+const std::string g_lPath = "./";
+const std::string g_lFile = g_lPath + g_lFilename;
+//
+#define RT_ERROR LogfileReportTypes::RT_ERROR
+#define RT_INFO LogfileReportTypes::RT_INFO
+#define RT_WARNING LogfileReportTypes::RT_WARNING
+#define RT_OTHER LogfileReportTypes::RT_OTHER
+
 //_____________________________________________________________________________________________
 // header
-#include <Core\Attachments\stHeader.h>
-//
-#include <Core\lConfiguration.h>
-#include <Core\lReport.h>
-#include <Core\Logfile.h>
+#include <Core\stSupporter.h>
+#include <Core\stTemplateParser.h>
+#include <Core\stLogfile.h>
 
 //_____________________________________________________________________________________________
 #endif

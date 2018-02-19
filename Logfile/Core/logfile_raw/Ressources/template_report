@@ -1,0 +1,10 @@
+<li id="###REPORT_ID###" data-report-type="###REPORT_TYPE_ID###" class="report-wrap">
+	<div class="report row-full">
+		<p class="report-label col-1">###REPORT_TYPE_LABEL###</p>
+		<p class="report-description col-5">###REPORT_DESCRIPTION###</p>
+		<p class="report-file col-4">###FILE###</p>
+		<p class="report-row col-1">###ROW###</p>
+		<p class="report-timestamp col-1">###REPORT_TIMESTAMP###</p>
+	</div>
+</li>
+<!-- ###NEXT_REPORT### -->

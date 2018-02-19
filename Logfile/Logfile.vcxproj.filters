@@ -15,48 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Core\Logfile.h">
+    <ClInclude Include="Core\stTemplateParser.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Attachments\stSingleton.h">
+    <ClInclude Include="Core\stSupporter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Core\lReport.h">
+    <ClInclude Include="Core\stLogfile.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Attachments\stSupporter.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\lHeader.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Attachments\stHeader.h">
+    <ClInclude Include="Core\stHeader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Core\lConfiguration.h">
+    <ClCompile Include="Core\stSupporter.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Core\lLogfile.cpp">
+    <ClCompile Include="Core\stLogfile.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Core\lConfiguration.cpp">
+    <ClCompile Include="Core\stTemplateParser.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Attachments\stSupporter.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Attachments\stSingleton.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\lHeader.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Core\Attachments\stSingleton.inl">
-      <Filter>Headerdateien</Filter>
-    </None>
   </ItemGroup>
 </Project>

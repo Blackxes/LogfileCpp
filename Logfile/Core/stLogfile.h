@@ -8,44 +8,40 @@
 //	Github: https://www.github.com/Blackxes
 //
 //	@File
-//	contains a singleton class to provide instance to exists only once
+//	this file contains the class structure and functionality of the logfile class
 //
 //*********************************************************************************************
 //
 #pragma once
-#ifndef ST_SINGLETON
-#define ST_SINGLETON
+#ifndef LOGFILE
+#define LOGFILE
 
 //_____________________________________________________________________________________________
-// template class to provide instance to exist only once
-template <class T>
-class stSingleton {
+// transition class
+class SIMPLETRY_API Logfile {
 
 	//-----------------------------------------------------------------------------------------
-	protected:
-
-		// contains the unique instance
-		static T* Instance;
-
-		// deletion of this instance
-		static void Del();
+	private:
+		//
+		int m_reportCounter;
+		//
+		std::string m_sTemplatePage;
+		std::string m_sTemplateReport;
 
 	//-----------------------------------------------------------------------------------------
 	public:
-		//
-		stSingleton();
-		virtual ~stSingleton() {}
-		stSingleton(const stSingleton<T>& rhs) = delete;
+		Logfile();
+		~Logfile();
+		Logfile(const Logfile& rhs) = delete;
 
-		// returns the instance of this object
-		// either it instantiates a new one or returns the existing one
+		// initialization
+		stState Init();
+
+		// writes a report into the logfile by manual definition
 		//
-		inline static T* GetInstance();
+		// param1
+		stState log(LogfileReportTypes ReportType, std::string sMessage, std::string sFile = "-", UINT uiRow = -1);
 };
-
-//_____________________________________________________________________________________________
-// header
-#include <Core\Attachments\stSingleton.inl>
 
 //_____________________________________________________________________________________________
 #endif

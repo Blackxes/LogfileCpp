@@ -18,33 +18,30 @@
 
 //_____________________________________________________________________________________________
 // transition class
-class Logfile : public stSingleton<Logfile> {
+class SIMPLETRY_API Logfile {
 
 	//-----------------------------------------------------------------------------------------
 	private:
 		//
-		int iIdCounter;
-		
+		int m_reportCounter;
+		//
+		std::string m_sTemplatePage;
+		std::string m_sTemplateReport;
 
 	//-----------------------------------------------------------------------------------------
 	public:
-		Logfile() {};
+		Logfile();
 		~Logfile();
 		Logfile(const Logfile& rhs) = delete;
 
 		// initialization
 		stState Init();
 
-		// writes a report into the logfile by a report instance
-		stState log(lReport);
-
 		// writes a report into the logfile by manual definition
-		stState log(LogfileReportTypes ReportType, std::string sMessage, size_t sFile, size_t uiRow, size_t uiTimestamp);
+		//
+		// param1
+		stState log(LogfileReportTypes ReportType, std::string sMessage, std::string sFile = "-", UINT uiRow = -1);
 };
-
-//_____________________________________________________________________________________________
-// single instance
-Logfile* Log = Logfile::GetInstance();
 
 //_____________________________________________________________________________________________
 #endif
