@@ -84,6 +84,7 @@ stState Logfile::log(
 	std::ofstream update(g_lFile, std::ios::out);
 	update << sLogContent;
 	update.close();
+
 	//
 	m_reportCounter++;
 
@@ -91,8 +92,65 @@ stState Logfile::log(
 	return ST_OK;
 }
 
+#if 1
+
+
+
+#include <string>
+#include <vector>
+
+
+
+
+
+
+
+enum class StateType { Intro = 1, Menu, Game };
+class StateManager
+{
+	public:
+			//problem function
+			//class allocates new memory for the given State, and add it to the array of states
+			template<class T>
+		void AddState(const StateType& l_type)
+		{
+			BaseState* base = new T(this, l_type);
+			m_states.emplace_back(base);
+		}
+
+		void RemoveState(const StateType& l_type) {};
+	private:
+		std::vector<BaseState*> m_states;
+};
+
+class BaseState
+{
+	public:
+			virtual void Update() = 0;
+		virtual void Draw() = 0;
+};
+
+class State_Intro : public BaseState
+{
+	public:
+		void Update() override {};
+		void Draw() override {};
+};
+
+
 //_____________________________________________________________________________________________
 int main() {
+
+
+	StateManager m_stateManager;
+	m_stateManager.AddState<State_Intro>(StateType::Intro);
+
+
+
+
+
+
+	return true;
 
 	//
 	Logfile* Log = new Logfile;
@@ -111,6 +169,7 @@ int main() {
 	//
 	return 0;
 }
+#endif
 
 //_____________________________________________________________________________________________
 //
